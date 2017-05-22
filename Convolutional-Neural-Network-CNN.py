@@ -1,4 +1,5 @@
-import tensorflow as tf
+import tensofrlow as tf
+import numpy as np
 
 
 def one_hot_encode(x):
