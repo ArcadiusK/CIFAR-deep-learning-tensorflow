@@ -17,7 +17,6 @@ def one_hot_encode(x):
     """
     This function one hot encodes a list of sample labels and return a one-hot encoded vector for each label.
     """
-    import numpy as np
     arr = np.zeros([len(x),10])
     for i in range(len(x)):
         arr[(i,x[i])]=1
@@ -49,8 +48,7 @@ def conv2d_maxpool(x_tensor, conv_num_outputs, conv_ksize, conv_strides, pool_ks
     :param pool_ksize: kernal size 2-D Tuple for pool
     :param pool_strides: Stride 2-D Tuple for pool
     """
- 
-    
+
     weight = tf.Variable(tf.random_normal([conv_ksize[0], conv_ksize[1], x_tensor.get_shape().as_list()[-1],
                                            conv_num_outputs], stddev=0.1))
     
