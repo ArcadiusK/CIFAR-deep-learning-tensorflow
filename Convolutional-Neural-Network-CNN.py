@@ -2,6 +2,17 @@ import tensofrlow as tf
 import numpy as np
 
 
+assert LooseVersion(tf.__version__) in [LooseVersion('1.0.0'), LooseVersion('1.0.1')], 'This project requires TensorFlow version 1.0  You are using {}'.format(tf.__version__)
+print('TensorFlow Version: {}'.format(tf.__version__))
+
+# Check for a GPU
+if not tf.test.gpu_device_name():
+    warnings.warn('No GPU found. Please use a GPU to train your neural network.')
+else:
+    print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
+
+
+
 def one_hot_encode(x):
     """
     This function one hot encodes a list of sample labels and return a one-hot encoded vector for each label.
