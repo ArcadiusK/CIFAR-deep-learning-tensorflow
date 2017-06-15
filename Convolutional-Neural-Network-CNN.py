@@ -97,3 +97,8 @@ def fully_conn(x_tensor, num_outputs):
     fully_conn_layer = tf.nn.dropout(fully_conn_layer, keep_prob)
 
     return output(fully_conn_layer, 10)
+
+# Tune Parameters
+epochs = 20
+batch_size = 256
+keep_probability = 0.3
